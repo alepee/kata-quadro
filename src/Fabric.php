@@ -6,7 +6,7 @@ use FabricShop\Fabric\Area;
 use FabricShop\Fabric\Length;
 use FabricShop\Fabric\Width;
 
-/*final*/ class Fabric
+final class Pawn
 {
     private $premium;
     private $with_patterns;

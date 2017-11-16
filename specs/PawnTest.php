@@ -23,6 +23,6 @@ class PawnTest extends TestCase
             Pawn::TALL
         );
 
-        $this->assertEquals($sut->color, Pawn::BLACK);
+        $this->assertEquals($sut->color(), Pawn::BLACK);
     }
 }
