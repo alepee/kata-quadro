@@ -12,21 +12,45 @@ final class Pawn
 
 
     const BLACK = 'black';
+    const WHITE = 'white';
+
     const HOLE = 'hole';
+    const SOLID = 'solid';
+
     const SQUARE = 'square';
+    const ROUND = 'round';
+
+    const SHORT = 'short';
     const TALL = 'tall';
+
     const NULL = null;
 
     public function __construct($color, $hole, $shape, $size)
     {
         $this->color = $color;
         $this->hole = $hole;
-        $this->shape;
+        $this->shape = $shape;
+        $this->size = $size;
     }
 
     public function color()
     {
         return $this->color;
+    }
+
+    public function hole()
+    {
+        return $this->hole;
+    }
+
+    public function shape()
+    {
+        return $this->shape;
+    }
+
+    public function size()
+    {
+        return $this->size;
     }
 
     public function properties()

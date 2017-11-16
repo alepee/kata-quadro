@@ -2,14 +2,17 @@
 
 namespace QuadroGame;
 
+use QuadroGame\Game;
 use PHPUnit\Framework\TestCase;
 
 class GameTest extends TestCase
 {
     private $sut;
 
-    public function test_it_will_be_true()
+    public function test_a_game_has_four_columns()
     {
-        $this->assertTrue(true);
+        $sut = new Game();
+
+        $this->assertEquals(count($sut->columns), 4);
     }
 }
