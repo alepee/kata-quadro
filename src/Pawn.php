@@ -25,10 +25,10 @@ final class Pawn
 
     const NULL = null;
 
-    public function __construct($color, $hole, $shape, $size)
+    public function __construct($color, $body, $shape, $size)
     {
         $this->color = $color;
-        $this->hole = $hole;
+        $this->hole = $body;
         $this->shape = $shape;
         $this->size = $size;
     }
