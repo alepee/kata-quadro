@@ -25,4 +25,28 @@ class PawnTest extends TestCase
 
         $this->assertEquals($sut->color(), Pawn::BLACK);
     }
+
+    public function test_it_wont_have_any_color()
+    {
+        $sut = new Pawn(
+            Pawn::NULL,
+            Pawn::NULL,
+            Pawn::NULL,
+            Pawn::NULL
+        );
+
+        $this->assertEquals($sut->color(), Pawn::NULL);
+    }
+
+    public function test_it_wont_exists_when_is_has_not_any_properties()
+    {
+        $sut = new Pawn(
+            Pawn::NULL,
+            Pawn::NULL,
+            Pawn::NULL,
+            Pawn::NULL
+        );
+
+        $this->assertFalse($sut->exists());
+    }
 }

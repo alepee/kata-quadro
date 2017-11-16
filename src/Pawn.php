@@ -10,10 +10,12 @@ final class Pawn
     private $shape;
     private $size;
 
+
     const BLACK = 'black';
     const HOLE = 'hole';
     const SQUARE = 'square';
     const TALL = 'tall';
+    const NULL = null;
 
     public function __construct($color, $hole, $shape, $size)
     {
