@@ -30,11 +30,7 @@ class BoardTest extends TestCase
     }
 
     public function test_it_inserts_new_pawn(){
-        $this->sut->add(
-            2,
-            3,
-            $this->pawn
-        );
+        $this->sut->add(2, 3, $this->pawn);
         $this->assertEquals(
             $this->sut->lines()[2][3],
             $this->pawn
@@ -46,41 +42,16 @@ class BoardTest extends TestCase
      */
     public function test_it_throw_an_exception_if_a_placement_is_already_taken()
     {
-        $this->sut->add(
-            2,
-            3,
-            $this->pawn
-        );
-
-        $this->sut->add(
-            2,
-            3,
-            $this->pawn
-        );
+        $this->sut->add(2, 3, $this->pawn);
+        $this->sut->add(2, 3, $this->pawn);
     }
 
     public function test_it_declare_one_combination_victorious()
     {
-        $this->sut->add(
-            1,
-            3,
-            $this->pawn
-        );
-        $this->sut->add(
-            2,
-            3,
-            $this->pawn
-        );
-        $this->sut->add(
-            3,
-            3,
-            $this->pawn
-        );
-        $this->sut->add(
-            4,
-            3,
-            $this->pawn
-        );
+        $this->sut->add(1, 3, $this->pawn);
+        $this->sut->add(2, 3, $this->pawn);
+        $this->sut->add(3, 3, $this->pawn);
+        $this->sut->add(4, 3, $this->pawn);
 
         $this->assertTrue(
             $this->sut->checkVictory()
