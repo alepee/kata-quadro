@@ -46,6 +46,22 @@ final class Board
         return $columns;
     }
 
+    public function diagonals(): array
+    {
+        return array_map(
+            function(array $dimension)
+            {
+                return [
+                    $dimension[0][0],
+                    $dimension[1][1],
+                    $dimension[2][2],
+                    $dimension[3][3]
+                ];
+            },
+            [$this->lines(), $this->columns()]
+        );
+    }
+
     public function add(int $x, int $y, Pawn $pawn): void
     {
         if (!empty($this->board[$x][$y]))
@@ -73,7 +89,11 @@ final class Board
 
     public function checkVictory()
     {
-        $combinations = array_merge($this->lines(), $this->columns());
+        $combinations = array_merge(
+            $this->lines(),
+            $this->columns(),
+            $this->diagonals()
+        );
 
         return array_reduce(
             $combinations,
