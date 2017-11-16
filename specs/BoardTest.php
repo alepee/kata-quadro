@@ -58,4 +58,38 @@ class BoardTest extends TestCase
             $this->pawn
         );
     }
+
+    public function test_it_declare_one_combination_victorious()
+    {
+        $this->sut->add(
+            1,
+            3,
+            $this->pawn
+        );
+        $this->sut->add(
+            2,
+            3,
+            $this->pawn
+        );
+        $this->sut->add(
+            3,
+            3,
+            $this->pawn
+        );
+        $this->sut->add(
+            4,
+            3,
+            $this->pawn
+        );
+
+        $this->assertTrue(
+            $this->sut->checkVictory()
+        );
+    }
+
+    public function test_it_has_failed()
+    {
+        $this->assertFalse($this->sut->checkVictory());
+    }
+
 }
