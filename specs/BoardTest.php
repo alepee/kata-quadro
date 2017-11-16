@@ -22,9 +22,9 @@ class BoardTest extends TestCase
     {
         $this->sut = new Board();
         $this->pawn = new Pawn(
-            Pawn::WHITE,
-            Pawn::HOLE,
-            Pawn::SQUARE,
+            Pawn::COLOR_WHITE,
+            Pawn::BODY_HOLE,
+            Pawn::SHAPE_SQUARE,
             Pawn::NULL
         );
     }

@@ -11,17 +11,17 @@ final class Pawn
     private $size;
 
 
-    const BLACK = 'black';
-    const WHITE = 'white';
+    const COLOR_BLACK = 'black';
+    const COLOR_WHITE = 'white';
 
-    const HOLE = 'hole';
-    const SOLID = 'solid';
+    const BODY_HOLE = 'hole';
+    const BODY_SOLID = 'solid';
 
-    const SQUARE = 'square';
-    const ROUND = 'round';
+    const SHAPE_SQUARE = 'square';
+    const SHAPE_ROUND = 'round';
 
-    const SHORT = 'short';
-    const TALL = 'tall';
+    const SIZE_SHORT = 'short';
+    const SIZE_TALL = 'tall';
 
     const NULL = null;
 

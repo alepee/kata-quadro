@@ -17,13 +17,13 @@ class PawnTest extends TestCase
     public function test_it_will_be_black()
     {
         $sut = new Pawn(
-            Pawn::BLACK,
-            Pawn::HOLE,
-            Pawn::SQUARE,
-            Pawn::TALL
+            Pawn::COLOR_BLACK,
+            Pawn::BODY_HOLE,
+            Pawn::SHAPE_SQUARE,
+            Pawn::SIZE_TALL
         );
 
-        $this->assertEquals($sut->color(), Pawn::BLACK);
+        $this->assertEquals($sut->color(), Pawn::COLOR_BLACK);
     }
 
     public function test_it_wont_have_any_color()
@@ -53,24 +53,24 @@ class PawnTest extends TestCase
     public function test_it_can_be_combined_to_another_pawn_and_give_matching_properties()
     {
         $firstPawn = new Pawn(
-            Pawn::BLACK,
-            Pawn::HOLE,
-            Pawn::SQUARE,
-            Pawn::SHORT
+            Pawn::COLOR_BLACK,
+            Pawn::BODY_HOLE,
+            Pawn::SHAPE_SQUARE,
+            Pawn::SIZE_SHORT
         );
 
         $secondPawn = new Pawn(
-            Pawn::WHITE,
-            Pawn::HOLE,
-            Pawn::ROUND,
-            Pawn::SHORT
+            Pawn::COLOR_WHITE,
+            Pawn::BODY_HOLE,
+            Pawn::SHAPE_ROUND,
+            Pawn::SIZE_SHORT
         );
 
         $thirdPawn = new Pawn(
-            Pawn::BLACK,
-            Pawn::SOLID,
-            Pawn::ROUND,
-            Pawn::SHORT
+            Pawn::COLOR_BLACK,
+            Pawn::BODY_SOLID,
+            Pawn::SHAPE_ROUND,
+            Pawn::SIZE_SHORT
         );
 
         $line = [
@@ -91,7 +91,7 @@ class PawnTest extends TestCase
             Pawn::NULL,
             Pawn::NULL,
             Pawn::NULL,
-            Pawn::SHORT
+            Pawn::SIZE_SHORT
         );
 
         $this->assertEquals($sut, $expectedPawn);
