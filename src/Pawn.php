@@ -29,5 +29,26 @@ final class Pawn
         return $this->color;
     }
 
+    public function properties()
+    {
+        return [
+            $this->color,
+            $this->hole,
+            $this->shape,
+            $this->size,
+        ];
+    }
 
+    public function exists()
+    {
+        $activeProperties = array_filter(
+            $this->properties(),
+            function($property)
+            {
+                return $property != Pawn::NULL;
+            }
+        );
+
+        return count($activeProperties) > 0;
+    }
 }
