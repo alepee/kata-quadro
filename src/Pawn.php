@@ -75,4 +75,17 @@ final class Pawn
 
         return count($activeProperties) > 0;
     }
+
+    function combine(Pawn $otherPawn): Pawn {
+
+        $combinedPawnProperties = [];
+        foreach ($this->properties() as $index => $property)
+        {
+            $combinedPawnProperties[] = (
+                $property == $otherPawn->properties()[$index] ? $property : Pawn::NULL
+            );
+        }
+
+        return new Pawn(...$combinedPawnProperties);
+    }
 }
